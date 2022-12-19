@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Free Web tutorials">
+        <meta name="developer" content="Rae024">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kev's Site</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="box column-start">
+            <h3>Enter a word</h3>
+            <input type="text" id="input_word" placeholder="Enter Word" onkeyup="search()">
+            <div class="grid">
+                <div id="demo"></div>
+            </div>
+            
+            <script>
+                function search() {
+                    let dict = {
+                        a: "Alpha",
+                        b: "Beta",
+                        c: "Charlie",
+                        d: "Delta",
+                        e: "Echo",
+                        f: "Foxtrot",
+                        g: "Golf",
+                        h: "Hotel",
+                        i: "India",
+                        j: "Juliet",
+                        k: "Kilo",
+                        l: "Lima",
+                        m: "Mike",
+                        n: "November",
+                        o: "Oscar",
+                        p: "Papa",
+                        q: "Quebec",
+                        r: "Romeo",
+                        s: "Sierra",
+                        t: "Tango",
+                        u: "Uniform",
+                        v: "Victor",
+                        w: "Whiskey",
+                        x: "X-ray",
+                        y: "Yankee",
+                        z: "Zulu"
+                    };
+                    let text = document.getElementById("input_word").value;
+                    const myArr = text.split("");
+                    text = "";
+                    for (let i = 0; i < myArr.length; i++) {
+                        for (const key of Object.keys(dict)) {
+                            if(myArr[i] == key) { text+= dict[key] + "<br>" }
+                        }
+                    }
+                    document.getElementById("demo").innerHTML = text;
+                }
+        </script>
+        </div>
+        <!-- <button onclick="msg()">Click</button> -->
+        <p class="htext">kevin is gay</p>
+    </body>
+</html>
